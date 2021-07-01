@@ -327,8 +327,8 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 528px;
-  min-height: 581px;
+  width: 528px;
+  height: 581px;
   padding: 40px;
   background: var(--white-color);
   box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
@@ -435,6 +435,10 @@ p {
   cursor: pointer;
 }
 
+.comment-form:focus {
+  border-color: var(--pretty-color);
+}
+
 .checkbox {
   display: inline-block;
   font-size: 12px;
@@ -516,15 +520,16 @@ p {
 }
 
 .close-button {
-  display: block;
-  position: fixed;
+  position: absolute;
   top: 8px;
   right: 8px;
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1px solid #0000001a;
-  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--white-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
 .close-svg {
@@ -534,13 +539,13 @@ p {
 .close-button:hover,
 .close-button:focus {
   cursor: pointer;
-  color: var(--pretty-color);
-}
-
-.close-svg:hover,
-.close-svg:focus {
   fill: var(--pretty-color);
 }
+
+/* .close-svg:hover,
+.close-svg:focus {
+  fill: var(--pretty-color);
+} */
 
 /* Hero */
 
@@ -745,7 +750,7 @@ p {
 
 /* Regular clients */
 .clients-list {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
 }
